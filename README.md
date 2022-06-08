@@ -273,9 +273,16 @@ curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py
 
 python get-pip.py
 
-export PATH="/home/rstudio-user/.local/bin":$PATH
+export PATH="$HOME/.local/bin":$PATH
 
 pip install clinphen
+
+python
+
+>>> import nltk
+>>> nltk.download('omw-1.4')
+>>> exit()
+
 ```
 
 2. Save clinical notes 
