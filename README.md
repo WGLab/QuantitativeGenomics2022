@@ -278,7 +278,7 @@ export PATH="$HOME/.local/bin":$PATH
 pip install clinphen
 ```
 
-2. Download package nltk in Python. In termininal, type "python", then type
+2. Download package nltk in Python. In terminal, type "python", then type
 ```
 import nltk
 nltk.download('omw-1.4')
