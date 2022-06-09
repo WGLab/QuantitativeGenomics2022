@@ -293,7 +293,7 @@ The proband had an abnormally large fontanelle, which resolved without treatment
 
 After that, press "ESC", and then shift+":wq" to exit the vi editor.
 
-To make things easier for users who do not know how to use vi, we also prepared this file in the `exercise1/example` directory as `m_notes.txt`. So you can also just directly use that file instead.
+To make things easier for users who do not know how to use vi, we also prepared this file in the `exercise1/example` directory as `m_notes.txt`. So you can also just directly copy that file to current directory `cp ../exercise1/example/m_notes.txt .` and use it instead.
 
 4. Run ClinPhen
 ```
