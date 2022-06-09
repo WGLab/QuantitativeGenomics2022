@@ -388,10 +388,6 @@ HP:0001831
 
 In summary, a number of computational tools such as Phen2Gene, AMELIE and GADO can perform phenotype-driven gene prioritization. Phen2Gene provides webserver or API, or you can install and run locally (which is important to deploy it in batch processing mode), and it does not require a list of random genes to run either.
 
-# Running PhenCards (optional exercises)
-
-Click [this link](PhenCards.md) to learn how you can use PhenCards.
-
 # CITATIONS:
 
 - [ANNOVAR](https://academic.oup.com/nar/article/38/16/e164/1749458): Wang K, Li M, Hakonarson H. ANNOVAR: Functional annotation of genetic variants from next-generation sequencing data. Nucleic Acids Research, 38:e164, 2010
@@ -399,3 +395,4 @@ Click [this link](PhenCards.md) to learn how you can use PhenCards.
 - [AMELIE](https://stm.sciencemag.org/content/12/544/eaau9113.abstract): Birgmeier, J. et al. AMELIE speeds Mendelian diagnosis by matching patient phenotype and genotype to primary literature. Sci. Transl. Med. 12:eaau9113, (2020).
 - [GADO](https://www.nature.com/articles/s41467-019-10649-4): Deelen, P. et al. Improving the diagnostic yield of exome- sequencing by predicting gene-phenotype associations using large-scale gene expression analysis. Nat. Commun. 10:2837 (2019).
 - [ClinPhen](https://www.nature.com/articles/s41436-018-0381-1): Deisseroth, C. A. et al. ClinPhen extracts and prioritizes patient phenotypes directly from medical records to expedite genetic disease diagnosis. Genet. Med. 21:1585–1593 (2019).
+- [PhenCards](https://genomemedicine.biomedcentral.com/articles/10.1186/s13073-021-00909-8): Havrilla, J.M. et al. PhenCards: a data resource linking human phenotype information to biomedical knowledge. Genom. Med. 13:91 (2021)
