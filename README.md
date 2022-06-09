@@ -346,7 +346,33 @@ After the wheel is done spinning your results should look like the following:
 
 The number 1 gene, TAF1 is the correct causal gene.  But Phen2Gene gets the same result.
 
-### 5. Summary of the phenotype analysis exercises
+### 5. Running PhenCards
+
+Go to https://phencards.org/.  Click on the tab `Patient notes`:
+
+![image](https://user-images.githubusercontent.com/11565618/172928326-9406c762-9887-46d3-80cf-b8098c88bb27.JPG)
+
+and paste this paragraph of clinical notes in the text box:
+
+```
+The proband had an abnormally large fontanelle, which resolved without treatment. The proband does not appear to have a sacral dimple. Other than the presence of flat arches, there are no obvious signs of foot abnormalities. The proband does not look like his other siblings, although there was a resemblance between him and his sister when they were the same age. Features of proband’s face can be seen, including bushy eyebrows, broad nasal tip, short philtrum, full lips and cupid bow of upper lip. Video of proband’s behavior. Proband is non-verbal, and hyperactive. He repetitively spins his toy. While playing, he gets up from his chair, walks a few steps, stomps his feet, and sits back down. Additional interview in August 2015, after the parents received the proband’s diagnosis of KBG syndrome. The proband develops new mannerisms every four to six months, the most recent being short, hard breaths through the nose and head turning. The proband has had a substantial decrease in the number of seizures after starting an Epidiolex (cannabidiol) treatment (70-80% decrease as described by the parents). The frequency of seizures increased after the proband fell and fractured his jaw.  The mother describes the proband’s macrodontia. Although the mother and several siblings have large teeth, the macrodontia in the proband does not appear in any other member of the family.  The proband’s features are compared to other characteristics usually found in other KBG patients. Unlike most KBG patients, the proband has full lips. Like most KBG patients, the proband has curved pinkies (diagnosed as clinodactyly), which are often found in KBG patients.  Although the proband has relatively short toes, this trait may have been inherited from the father. The proband also has curved toenails, which commonly appear in autistic children.
+```
+
+
+![image](https://user-images.githubusercontent.com/11565618/172928866-dfde622c-3a00-42dc-9eab-0dba303ff28f.JPG)
+
+Then click Search.
+
+![image](https://user-images.githubusercontent.com/11565618/172929187-2d6ea4d2-a333-4ee6-8914-5b6b5db0b9d7.JPG)
+
+This is raw notes with no curation done and all HPO terms are being automatically extracted by Doc2HPO. You should see that Kagami-Ogata syndrome is in the top disease list.
+
+![image](https://user-images.githubusercontent.com/11565618/172929341-5805d87c-21b6-4fbf-9be6-f7c1a6bc82c8.JPG)
+
+
+Alternatively, you can also submit the HPO terms from example/ANKRD11.txt manually using the tab HPO IDs (they are already the default terms in the website so you can just click Search on that tab).
+
+### 6. Summary of the phenotype analysis exercises
 
 In summary, a number of computational tools such as Phen2Gene, AMELIE and GADO can perform phenotype-driven gene prioritization. Phen2Gene provides webserver or API, or you can install and run locally (which is important to deploy it in batch processing mode), and it does not require a list of random genes to run either.
 
