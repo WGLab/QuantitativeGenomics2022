@@ -368,8 +368,6 @@ This is raw notes with no curation done and all HPO terms are being automaticall
 
 ![image](https://user-images.githubusercontent.com/11565618/172929341-5805d87c-21b6-4fbf-9be6-f7c1a6bc82c8.JPG)
 
-[HPO_terms.txt]
-
 Alternatively, you can also submit the following list of HPO terms manually using the tab HPO IDs (they are already the default terms in the website so you can just click Search on that tab).
 
 ```
