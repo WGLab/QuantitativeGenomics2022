@@ -116,7 +116,7 @@ In the `exercise1` folder, run `pwd` to obtain the working directory and copy th
 Paste this path to R console or R studio interface to setup the working directory using function `setwd()`. For example:
 
 ```
-> setwd("genomics_exercise/exercise1")
+> setwd("/cloud/project/genomics_exercise/exercise1")
 ```
 
 Check variant distribution across chromesomes:
