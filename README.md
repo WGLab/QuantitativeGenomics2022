@@ -370,7 +370,21 @@ This is raw notes with no curation done and all HPO terms are being automaticall
 
 [HPO_terms.txt]
 
-Alternatively, you can also submit [this list of HPO terms](https://github.com/WGLab/QuantitativeGenomics2022/files/8873426/HPO_terms.txt) manually using the tab HPO IDs (they are already the default terms in the website so you can just click Search on that tab).
+Alternatively, you can also submit the following list of HPO terms manually using the tab HPO IDs (they are already the default terms in the website so you can just click Search on that tab).
+
+```
+HP:0000455
+HP:0000574
+HP:0030084
+HP:0012471
+HP:0000239
+HP:0001572
+HP:0000960
+HP:0001250
+HP:0000322
+HP:0001831
+```
+
 
 ### 6. Summary of the phenotype analysis exercises
 
