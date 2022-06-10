@@ -358,23 +358,14 @@ Then click Search.
 
 ![image](https://user-images.githubusercontent.com/11565618/172929187-2d6ea4d2-a333-4ee6-8914-5b6b5db0b9d7.JPG)
 
-This is raw notes with no curation done and all HPO terms are being automatically extracted by Doc2HPO. You should see that Kagami-Ogata syndrome is in the top disease list.
+This is raw notes with no curation done and all HPO terms are being automatically extracted by Doc2HPO. You should see that KBG syndrome is among the top disease list.
 
-![image](https://user-images.githubusercontent.com/11565618/172929341-5805d87c-21b6-4fbf-9be6-f7c1a6bc82c8.JPG)
+![image](https://user-images.githubusercontent.com/5926328/173098943-9e24c858-318b-45f6-9ca9-ea3d1ea1c0aa.png)
 
-Alternatively, you can also submit the following list of HPO terms manually using the tab HPO IDs (they are already the default terms in the website so you can just click Search on that tab).
+Alternatively, you can also submit the following list of HPO terms manually using the Phen2Gene web server to find the top ranked candidate genes.
 
 ```
-HP:0000455
-HP:0000574
-HP:0030084
-HP:0012471
-HP:0000239
-HP:0001572
-HP:0000960
-HP:0001250
-HP:0000322
-HP:0001831
+HP:0000455; HP:0000574; HP:0030084; HP:0012471; HP:0000239; HP:0001572; HP:0000960; HP:0001250; HP:0000322; HP:0001831
 ```
 
 
