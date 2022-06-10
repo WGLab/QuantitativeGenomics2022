@@ -180,16 +180,7 @@ You should see a figure similar to the one below:
 
 Phen2Gene is a phenotype-based gene prioritization tool from HPO IDs or clinical notes on patients. In the next exercise, we will first use Phen2Gene to prioritize genes based on clinical phenotypes of patients with Mendelian diseases.
 
-We will do the exercise in a directory called `exercise2`. So first use `cd ..` to go to the upper directory, then create this new directory, then go into this directory.
-
-```
-/cloud/project/genomics_exercise/exercise1$ cd ..
-/cloud/project/genomics_exercise$ ls
-exercise1  exercise1.tar.gz
-/cloud/project/genomics_exercise$ mkdir exercise2
-/cloud/project/genomics_exercise$ cd exercise2/
-/cloud/project/genomics_exercise/exercise2$ 
-```
+We will do the exercise in a directory called `exercise2`. So use command `cd ../exercise2` to go into the exercise2 directory.
 
 There are three ways to run Phen2Gene: download and run it locally (need a few GB of space), using API and using Phen2Gene website. Today, we will perform the latter 2 ways of running Phen2Gene. Of course, if you are interested downloading Phen2Gene and run it locally in a different computer server, you can follow instructions here: https://github.com/WGLab/Phen2Gene.
 
