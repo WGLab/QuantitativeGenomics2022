@@ -362,7 +362,7 @@ This is raw notes with no curation done and all HPO terms are being automaticall
 
 ![image](https://user-images.githubusercontent.com/5926328/173098943-9e24c858-318b-45f6-9ca9-ea3d1ea1c0aa.png)
 
-Alternatively, you can also submit the following list of HPO terms manually using the Phen2Gene web server to find the top ranked candidate genes. (Do not enter these terms into PhenCards which only find cross-reference for each one of these terms.)
+Alternatively, you can also submit the following list of HPO terms manually using the PhenCards web server to find the information of HPO terms. (Do not enter these terms into PhenCards which only find cross-reference for each one of these terms.)
 
 ```
 HP:0000455; HP:0000574; HP:0030084; HP:0012471; HP:0000239; HP:0001572; HP:0000960; HP:0001250; HP:0000322; HP:0001831
