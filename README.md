@@ -229,6 +229,10 @@ colnames(marray) <- names(result$results[[1]]);
 
 # View the results in 2-D array. The second column is the rank of genes.
 View (marray);
+
+# Get top 100 genes based on Phen2Gene score
+top100<-matrix(array(unlist(result$results)), 5)[1,][1:100]
+write.table(top100, file="phen2gene_top100_genes", quote=F, col.names = F, row.names = F)
 ```
 ![image](https://user-images.githubusercontent.com/16017780/122829197-b2c2f700-d2b4-11eb-9fe7-a4079bfe286d.png)
 
