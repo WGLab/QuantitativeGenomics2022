@@ -203,7 +203,7 @@ Other tools listed below (ClinPhen, AMELIE, etc) require a gene list, and Phen2G
 
 
 ### 1. Using Phen2Gene API.
-1. Go to Terminal, make sure you are in the `exercise2` directory first, and run `curl -i -H "Accept: application/json" -H "Content-Type: application/json" "https://phen2gene.wglab.org/api?HPO_list=HP:0002459" | tail -n 1 > output.txt`
+1. Go to Terminal, make sure you are in the `exercise2` directory first, and run `curl -i -H "Accept: application/json" -H "Content-Type: application/json" "https://phen2gene.wglab.org/api?HPO_list=HP:0000455;HP:0000574;HP:0030084;HP:0012471;HP:0000239;HP:0001572;HP:0000960;HP:0001250;HP:0000322;HP:0001831" | tail -n 1 > output.txt`
 where you generate JSON output in `output.txt`
 
 2. Go To Console, remember that we should first set `exercise2` as the working directory.
@@ -234,9 +234,9 @@ View (marray);
 top100<-matrix(array(unlist(result$results)), 5)[1,][1:100]
 write.table(top100, file="phen2gene_top100_genes", quote=F, col.names = F, row.names = F)
 ```
-![image](https://user-images.githubusercontent.com/16017780/122829197-b2c2f700-d2b4-11eb-9fe7-a4079bfe286d.png)
+![image](https://user-images.githubusercontent.com/5926328/173119713-fd122a2a-8b4d-42d8-9618-af9b06ad5e8e.png)
 
-You can see that the top ranked genes are ALK, ATP7A, TTR, etc.
+You can see that the top ranked genes are VPS13B, ARID1B, etc.
 
 ### 2. Using the Phen2Gene Website to assess the ANKRD11 case
 
