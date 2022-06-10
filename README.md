@@ -285,15 +285,9 @@ nltk.download('omw-1.4')
 ```
 After completing installation, type "exit()" to quit Python.
 
-3. Save clinical notes 
-In Terminal, type "vi m_notes.txt",  then press "Insert" botton or "i", then copy the notes below, and click right mouse button followed by "paste"
-```
-The proband had an abnormally large fontanelle, which resolved without treatment. The proband does not appear to have a sacral dimple. Other than the presence of flat arches, there are no obvious signs of foot abnormalities. The proband does not look like his other siblings, although there was a resemblance between him and his sister when they were the same age. Features of proband’s face can be seen, including bushy eyebrows, broad nasal tip, short philtrum, full lips and cupid bow of upper lip. Video of proband’s behavior. Proband is non-verbal, and hyperactive. He repetitively spins his toy. While playing, he gets up from his chair, walks a few steps, stomps his feet, and sits back down. Additional interview in August 2015, after the parents received the proband’s diagnosis of KBG syndrome. The proband develops new mannerisms every four to six months, the most recent being short, hard breaths through the nose and head turning. The proband has had a substantial decrease in the number of seizures after starting an Epidiolex (cannabidiol) treatment (70-80% decrease as described by the parents). The frequency of seizures increased after the proband fell and fractured his jaw.  The mother describes the proband’s macrodontia. Although the mother and several siblings have large teeth, the macrodontia in the proband does not appear in any other member of the family.  The proband’s features are compared to other characteristics usually found in other KBG patients. Unlike most KBG patients, the proband has full lips. Like most KBG patients, the proband has curved pinkies (diagnosed as clinodactyly), which are often found in KBG patients.  Although the proband has relatively short toes, this trait may have been inherited from the father. The proband also has curved toenails, which commonly appear in autistic children.
-```
+3. Copy clinical notes 
 
-After that, press "ESC", and then shift+":wq" to exit the vi editor.
-
-To make things easier for users who do not know how to use vi, we also prepared this file in the `exercise1/example` directory as `m_notes.txt`. So you can also just directly copy that file to current directory `cp ../exercise1/example/m_notes.txt .` and use it instead.
+We prepared a clinical note file under the `exercise1/example` directory as `m_notes.txt`. So you can also just directly copy that file to current directory `cp ../exercise1/example/m_notes.txt .` and use it.
 
 4. Run ClinPhen
 ```
