@@ -273,9 +273,6 @@ And you should see that ANKRD11 is still number 2.
 ClinPhen is another tool to analyze clinical notes. To run this tool, 
 1. Go to Terminal and run the commands below to install it.
 ```
-curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py
-
-python get-pip.py
 
 export PATH="$HOME/.local/bin":$PATH
 
@@ -313,6 +310,8 @@ HP:0030084      Clinodactyly    1       42      like most kbg patients the proba
 ```
 
 You will get the results from ClinPhen. You can also type `clinphen --help` if you are interested in more options.
+
+To find candidate genes for this set of HPO terms, you can input `HP:0012471;HP:0000574;HP:0000455;HP:0000322;HP:0002263;HP:0001250;HP:0030084` into Phen2Gene web server.
 
 ### 4. Run AMELIE
 
