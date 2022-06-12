@@ -185,41 +185,14 @@ The benefit of running Phen2Gene is if you do not have any idea of a candidate g
 Other tools listed below (ClinPhen, AMELIE, etc) require a gene list, and Phen2Gene does not require any variant data or prior gene lists to provide high quality candidate genes.  One would most likely use Phen2Gene for obtaining the genetic etiology of an undiagnosed rare disease with no obvious genetic cause.
 
 
-### 1. Using Phen2Gene API.
-1. Go to Terminal, make sure you are in the `exercise2` directory first, and run `curl -i -H "Accept: application/json" -H "Content-Type: application/json" "https://phen2gene.wglab.org/api?HPO_list=HP:0000455;HP:0000574;HP:0030084;HP:0012471;HP:0000239;HP:0001572;HP:0000960;HP:0001250;HP:0000322;HP:0001831" | tail -n 1 > output.txt`
-where you generate JSON output in `output.txt`
+### 1. Using Phen2Gene in Terminal.
 
-However, since the `output.txt` file is in JSON format, it is not very intuitive to view the content of the file. Instead, we will use the table browser in Rstudio to view a formatted version of the JSON file.
+Go to Terminal, make sure you are in the `exercise2` directory first, and run `python /cloud/project/usr/Phen2Gene/phen2gene.py -f hpo_list.txt`
+where you generate Phen2Gene output file in `out/output_file.associated_gene_list`
 
-2. Go To Console, remember that we are probably in the `exercise1` directory, so we should first set `exercise2` as the working directory.
+Use command "more output_file.associated_gene_list" to check the predicted genes.
 
-```
-setwd("../exercise2")
-```
-
-3. and we can run
-```
-# install JSON in R
-install.packages("rjson")
-
-# Load JSON in R
-library("rjson")
-
-# Read JSON results
-result <- fromJSON(file = "output.txt")
-
-# Convert them to array and name columns.
-marray <- t(array( unlist(result$results), dim=c(5, length(result$results)) ) );
-colnames(marray) <- names(result$results[[1]]);
-
-# View the results in 2-D array. The second column is the rank of genes.
-View (marray);
-
-# Get top 100 genes based on Phen2Gene score
-top100<-matrix(array(unlist(result$results)), 5)[1,][1:100]
-write.table(top100, file="phen2gene_top100_genes", quote=F, col.names = F, row.names = F)
-```
-![image](https://user-images.githubusercontent.com/5926328/173119713-fd122a2a-8b4d-42d8-9618-af9b06ad5e8e.png)
+![image](https://user-images.githubusercontent.com/11565618/173251477-9995c724-a637-4a81-8582-31ac593ec401.png)
 
 You can see that the top ranked genes are VPS13B, ARID1B, etc.
 
