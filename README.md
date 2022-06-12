@@ -14,7 +14,7 @@ Students need to go to [RStudio Cloud](https://rstudio.cloud/) to create your ow
 3. After you input your information, click "Sign up". 
 <img src="https://user-images.githubusercontent.com/16017780/122824633-f0248600-d2ae-11eb-9bd1-a72b8f03383b.png" width="200" height="300">
 
-If you logout after signing up, you can go to [RStudio Cloud](https://rstudio.cloud/) and login with your username and password. After you are added to "2022 Quantitative Genomics" project, you can click "Annotation_Assignment" to start the exercise. 
+If you logout after signing up, you can go to [RStudio Cloud](https://rstudio.cloud/) and login with your username and password. After you are added to "2022 Quantitative Genomics" project, you can click "Annotation_Assignment" to start the exercise. The direct link is [here](https://rstudio.cloud/spaces/232505/content/4126775). 
 
 ![image](https://user-images.githubusercontent.com/5926328/173241575-fa2b97b0-072e-4dc4-8876-d4ed33197ca5.png)
 
