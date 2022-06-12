@@ -267,7 +267,7 @@ You will get the results from ClinPhen. You can also type `clinphen --help` if y
 
 To find candidate genes for this set of HPO terms, you can input `HP:0012471;HP:0000574;HP:0000455;HP:0000322;HP:0002263;HP:0001250;HP:0030084` into Phen2Gene web server.
 
-### 4. Run AMELIE
+### 4. Running AMELIE
 
 [AMELIE](https://amelie.stanford.edu/) is yet another tool for analyzing clinical notes, however it requires a candidate gene list.  We put the real causal gene in a algorithm-allowed maximum 1000 gene list of random exome capture genes.
 
@@ -362,8 +362,38 @@ The analytical logic in the above command is that: first we take only exonic var
 
 ![image](https://user-images.githubusercontent.com/11565618/173124914-4cc9f913-c265-4153-ba8c-16d7ec66f716.png)
 
+### 7. Running Phenomizer
 
-### 6. Summary of the phenotype analysis exercises
+[Phenomizer](https://compbio.charite.de/phenomizer/) is another a web-based application for clinical diagnostics in human genetics using semantic similarity searches in ontologies.
+
+```
+HP:0000455
+HP:0000574
+HP:0030084
+HP:0012471
+HP:0000239
+HP:0001572
+HP:0000960
+HP:0001250
+HP:0000322
+HP:0001831
+```
+
+First copy one HPO term above to the search bar Phenomizer and click "Search".
+
+![image](https://user-images.githubusercontent.com/11565618/173252411-dad15093-1ce0-4a19-942f-d3060c9714b5.png)
+
+Then right click the searched HPO term and select "Add to Patient's Features". You will see this HPO term added to the right panel of Phenomizer.
+
+![image](https://user-images.githubusercontent.com/11565618/173252457-7f675892-8a4b-4562-b617-2c10fbe3b351.png)
+
+Repeat this step for all HPO terms listed above. After all HPO terms added to the right panel, click "Get diagnosis" at the bottom right corner of Phenomizer.
+
+![image](https://user-images.githubusercontent.com/11565618/173252307-b87b7b5a-5de9-483a-a29c-d735a0760d09.png)
+
+You should see that KBG syndrome is among the top disease list
+
+### 8. Summary of the phenotype analysis exercises
 
 In summary, a number of computational tools such as Phen2Gene, AMELIE and GADO can perform phenotype-driven gene prioritization. Phen2Gene provides webserver or API, or you can install and run locally (which is important to deploy it in batch processing mode), and it does not require a list of random genes to run either.
 
