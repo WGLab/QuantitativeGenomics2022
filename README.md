@@ -38,41 +38,18 @@ After login to Rstudio Cloud, you already have terminal access by clicking 'term
 
 ### 1. Install ANNOVAR
 
-Typically you will go to the [ANNOVAR website](http://annovar.openbioinformatics.org), fill in a registration form, and download the package there. For this exercise, we already prepared a ZIP file that contains a "compact" version of ANNOVAR and necessary library files, to make it easier for users. To make it easier to manage files and directories, you can create a new directory, then enter this new directory (type `mkdir genomics_exercise` followed by `cd genomics_exercise`). To confirm which directory you are in, you can type `pwd`. You will see the example below.
+Typically you will go to the [ANNOVAR website](http://annovar.openbioinformatics.org), fill in a registration form, and download the package there. For this exercise, we already prepared a folder in the cloud server that contains a "compact" version of ANNOVAR and necessary library files, to make it easier for users. The folder is called `genomics_exercise` and you can simply use `cd genomics_exercise` to go to this folder). To confirm which directory you are in, you can type `pwd`. You will see the example below.
 
 ```
-/cloud/project$ mkdir genomics_exercise
 /cloud/project$ cd genomics_exercise/
 /cloud/project/genomics_exercise$ pwd
 /cloud/project/genomics_exercise
 ```
 
-Next, you can just download the ZIP file for this class by the command `wget https://github.com/WGLab/QuantitativeGenomics2022/releases/download/v0.1.2/exercise.tar.gz`. The Linux command `wget` essentially downloads a file from a given URL and saves the file to your computer. Because this file contains several annotation databases, its size is around 160Mb and it may take a while to download it. To unzip the file, you can dirctly using `tar -xvf exercise.tar.gz` to unzip the downladed file. You will see from the messages in screen that several files are extracted from the zip file. Please note that this is a sub-sampled version of ANNOVAR for the purpose of th exercise today (to reduce file size significantly), and it should not be used in any other real data analysis.
+Please note that this is a sub-sampled version of ANNOVAR for the purpose of th exercise today (to reduce file size significantly to <200Mb), and it should not be used in any other real data analysis. You can view all the files in `exercise1` directory:
 
-```
-/cloud/project/genomics_exercise$ tar -xvf exercise.tar.gz
-exercise1/
-exercise1/example/
-exercise1/example/ex3.avinput
-exercise1/example/ex2.vcf
-exercise1/example/ex1.avinput
-exercise1/example/gene_xref.txt
-exercise1/table_annovar.pl
-exercise1/convert2annovar.pl
-exercise1/retrieve_seq_from_fasta.pl
-exercise1/coding_change.pl
-exercise1/sarscov2db/
-exercise1/sarscov2db/NC_045512v2_avGeneMrna.fa
-exercise1/sarscov2db/NC_045512v2_avGene.txt
-exercise1/humandb/
-exercise1/humandb/hg19_refGeneWithVerMrna.fa
-exercise1/humandb/hg19_gnomad211_exome.txt.idx
-exercise1/humandb/hg19_cytoBand.txt
-exercise1/humandb/hg19_refGeneWithVer.txt
-exercise1/humandb/hg19_gnomad211_exome.txt
-exercise1/annotate_variation.pl
-exercise1/variants_reduction.pl
-```
+![image](https://user-images.githubusercontent.com/5926328/173242142-864ba9a2-5ac2-4d9f-94f8-a3c4a3d61d52.png)
+
 
 ### 2. Run ANNOVAR on a small VCF file
 
@@ -84,9 +61,11 @@ perl table_annovar.pl example/ex2.vcf humandb/ -buildver hg19 -out myanno -remov
 
 After that, you will find the result files `myanno.hg19_multianno.txt` and `myanno.hg19_multianno.vcf`.
 
-In the command above, we specified three protocols, including RefGene annotation (a gene-based annotation), cytogenetic band annotation (a region-based annotation), and allele frequency in gnoMAD version 2.1.1 (a filter-based annotation). These three types of annotation are indicated as `g`, `r` and `f` in the -operation argument, respectively. We also specify that dots ('.') be used to indicate lack of information, so variants that are not observed in the database will have '.' as the annotation. The `-vcfinput` argument specifies that the input file is in VCF format.
+The `-protocol` and the `-operation` arguments are the most important one to understand here. Protocol lists a set of tasks that you want to use for annotation, composed of a list of comma-separated keywords. Operation specifies the type of annotations that each step in the protocol uses, composed of a list of comma-separated letters such as `g`, `r` and `f`, corresponding to gene-based, region-based and filter-based annotations, respectively.
 
-If you have Excel installed, you can open the `hg19_multianno.txt` file by Excel and examine the various tab-delimited fields.
+In the command above, we specified a protocol with three annotation tasks, including RefGene annotation (a gene-based annotation), cytogenetic band annotation (a region-based annotation), and allele frequency in gnoMAD version 2.1.1 (a filter-based annotation). These three types of annotation are indicated as `g`, `r` and `f` in the -operation argument, respectively. We also specify that dots ('.') be used to indicate lack of information, so variants that are not observed in the database will have '.' as the annotation. The `-vcfinput` argument specifies that the input file is in VCF format. We also specify that the output file names should have "myanno" as the prefix, to make it easier to check output files.
+
+If you have Excel installed, you can open the `hg19_multianno.txt` file by Excel and examine the various tab-delimited fields. Since we are using Rstudio now, we could also easily import the tab-delimited file into Rstudio to examine the various rows and columns. We will do this later to filter and prioritize disease-relevant variants.
 
 ### 3. Run ANNOVAR on a human exome
 
@@ -98,6 +77,8 @@ In the `exercise1` folder:
 wget http://molecularcasestudies.cshlp.org/content/suppl/2016/10/11/mcs.a001131.DC1/Supp_File_2_KBG_family_Utah_VCF_files.zip -O Supp_File_2_KBG_family_Utah_VCF_files.zip
 ```
 
+To give some background information, this is a zip file as supplementary material of a published paper on exome sequencing of a family with undiagnosed genetic diseases. Through analysis of the exome data, the proband was confirmed to have KBG syndrome, a disease caused by loss of function mutations in ANKRD11 gene. There are several VCF files contained in the zip file, including those for parents, silings and the proband. We will only analyze proband in this exercise, but if you are interested, you may want to check whether this is a de novo mutation by analyzing parental genomes.
+
 Next unzip the ZIP file (`unzip`):
 
 ```
@@ -105,15 +86,21 @@ unzip Supp_File_2_KBG_family_Utah_VCF_files.zip
 mv './File 2_KBG family Utah_VCF files/' VCF_files
 ```
 
+Note that in the commands above, we rename the directory to "VCF_files" just to make it easier to read and operate.
+
 Run ANNOVAR on the VCF file:
 ```
-perl table_annovar.pl VCF_files/proband.vcf -buildver hg19 humandb -out proband.annovar -remove -protocol refGeneWithVer,gnomad211_exome -operation g,f -nastring . -vcfinput
+perl table_annovar.pl VCF_files/proband.vcf humandb/ -buildver hg19 -out proband.annovar -remove -protocol refGeneWithVer,gnomad211_exome -operation g,f -nastring . -vcfinput
 ```
 
 The `proband.annovar.hg19_multianno.txt` file contains annotations for this exome.
 
+Now compare this command from the previous table_annovar.pl command, we can see that this type we only request two annotation tasks (refGeneWithVer and gnomad211_exome), which are gene-based and filter-based annotations, respectively.
+
 
 ### 4. Results visualization
+
+We used "terminal" for the commands above to generate results. To do further analysis in R, we can now switch to the "console" in Rstudio.
 
 In the `exercise1` folder, run `pwd` to obtain the working directory and copy this path. 
 
@@ -178,13 +165,14 @@ You should see a figure similar to the one below:
 
 ![image](https://user-images.githubusercontent.com/11565618/123002260-ba030700-d37f-11eb-811b-54eb98fb0c73.png)
 
+Feel free to use the table browser to examine the various rows and columns in this table and perform additional summary statistics. Later on, after the exercise 2 (phenotype analysis) below, we will go back to this table to show how combined analysis of genotype data and phenotype data can facilitate genetic diagnosis of rare diseases.
 
 
 # Phenotype-driven prioritization of human disease genes (Phen2Gene, ClinPhen, AMELIE, etc)
 
 Phen2Gene is a phenotype-based gene prioritization tool from HPO IDs or clinical notes on patients. In the next exercise, we will first use Phen2Gene to prioritize genes based on clinical phenotypes of patients with Mendelian diseases.
 
-We will do the exercise in a directory called `exercise2`. So use command `cd ../exercise2` to go into the exercise2 directory.
+We will do the exercise in a directory called `exercise2`. In the terminal, assuming that you are currently in the `exercise1` directory (you can use `pwd` to check this), you can use command `cd ../exercise2` to go into the exercise2 directory.
 
 There are three ways to run Phen2Gene: download and run it locally (need a few GB of space), using API and using Phen2Gene website. Today, we will perform the latter 2 ways of running Phen2Gene. Of course, if you are interested downloading Phen2Gene and run it locally in a different computer server, you can follow instructions here: https://github.com/WGLab/Phen2Gene.
 
@@ -201,7 +189,9 @@ Other tools listed below (ClinPhen, AMELIE, etc) require a gene list, and Phen2G
 1. Go to Terminal, make sure you are in the `exercise2` directory first, and run `curl -i -H "Accept: application/json" -H "Content-Type: application/json" "https://phen2gene.wglab.org/api?HPO_list=HP:0000455;HP:0000574;HP:0030084;HP:0012471;HP:0000239;HP:0001572;HP:0000960;HP:0001250;HP:0000322;HP:0001831" | tail -n 1 > output.txt`
 where you generate JSON output in `output.txt`
 
-2. Go To Console, remember that we should first set `exercise2` as the working directory.
+However, since the `output.txt` file is in JSON format, it is not very intuitive to view the content of the file. Instead, we will use the table browser in Rstudio to view a formatted version of the JSON file.
+
+2. Go To Console, remember that we are probably in the `exercise1` directory, so we should first set `exercise2` as the working directory.
 
 ```
 setwd("../exercise2")
@@ -233,7 +223,7 @@ write.table(top100, file="phen2gene_top100_genes", quote=F, col.names = F, row.n
 
 You can see that the top ranked genes are VPS13B, ARID1B, etc.
 
-### 2. Using the Phen2Gene Website to assess the ANKRD11 case
+### 2. Using the Phen2Gene Website to assess the case with KBG syndrome
 
 Go to https://phen2gene.wglab.org.  Click on the tab `Patient notes`:
 
@@ -371,6 +361,8 @@ The expected results are shown below in Phen2Gene server:
 ![image](https://user-images.githubusercontent.com/5926328/173100269-d316d071-c96e-46d4-b28e-9c479ceb7e9c.png)
 
 ### 6. Filtering ANNOVAR annotation results based on Phen2Gene output
+Now that we performed variant annotation in exercise1, and performed phenotype-based gene prioritization in exercise2, we want to see how to infer and prioritize candidate genes for the disease.
+
 1. Go To Console, we can run
 ```
 # Load top 100 genes generated by Phen2Gene
@@ -388,6 +380,9 @@ res <- res[res$ExonicFunc.refGeneWithVer!="synonymous SNV",]
 res <- res[res$AF<.005 | is.na(res$AF),]
 View(res)
 ```
+
+The analytical logic in the above command is that: first we take only exonic variants in the top 100 genes predicted by phenotype-driven gene prioritization software. Next, we remove synonymous SNVs from the list. Next, we keep only variants that are not observed in the gnomAD database, or observed but with allele frequency lower than 0.005.
+
 2. You can see that gene ANKRD11 is in the following list
 
 ![image](https://user-images.githubusercontent.com/11565618/173124914-4cc9f913-c265-4153-ba8c-16d7ec66f716.png)
