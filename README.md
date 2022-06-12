@@ -373,7 +373,7 @@ res$Gene.refGeneWithVer
 res <- res[res$Gene.refGeneWithVer %in% top100,]
 res <- res[res$Func.refGeneWithVer=="exonic",]
 res <- res[res$ExonicFunc.refGeneWithVer!="synonymous SNV",]
-res <- res[res$AF<.005 | is.na(res$AF),]
+res <- res[res$AF_popmax<.005 | is.na(res$AF_popmax),]
 View(res)
 ```
 
