@@ -271,11 +271,7 @@ nltk.download('omw-1.4')
 ```
 After completing installation, type "exit()" to quit Python.
 
-3. Copy clinical notes 
-
-We prepared a clinical note file under the `exercise1/example` directory as `m_notes.txt`. So you can also just directly copy that file to current directory `cp ../exercise1/example/m_notes.txt .` and use it.
-
-4. Run ClinPhen
+3. Run ClinPhen
 ```
 clinphen m_notes.txt
 ```
