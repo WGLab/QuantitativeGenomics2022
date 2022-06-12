@@ -383,23 +383,22 @@ First copy one HPO term above to the search bar Phenomizer and click "Search".
 
 ![image](https://user-images.githubusercontent.com/11565618/173252411-dad15093-1ce0-4a19-942f-d3060c9714b5.png)
 
-Then right click the searched HPO term and select "Add to Patient's Features". You will see this HPO term added to the right panel of Phenomizer.
+Then right click the searched HPO term and select "Add to Patient's Features". You will see this HPO term added to the right panel of Phenomizer. Repeat this step for all HPO terms listed above. 
 
 ![image](https://user-images.githubusercontent.com/11565618/173252457-7f675892-8a4b-4562-b617-2c10fbe3b351.png)
 
-Repeat this step for all HPO terms listed above. 
+Select "Yes" to make sure 'symmetric' mode algorithm checked on. 
 
 ![image](https://user-images.githubusercontent.com/11565618/173253745-d951c9cd-6a64-4397-a98b-9306207a0aea.png)
 
-Select "Yes" to make sure 'symmetric' mode algorithm checked on. 
+After all HPO terms added to the right panel, click "Get diagnosis" at the bottom right corner of Phenomizer.
 
 ![image](https://user-images.githubusercontent.com/11565618/173253652-8b8714be-d676-43d5-8286-d7a5513c8f30.png)
 
-After all HPO terms added to the right panel, click "Get diagnosis" at the bottom right corner of Phenomizer.
+You should see that KBG syndrome is among the top disease list
 
 ![image](https://user-images.githubusercontent.com/11565618/173252307-b87b7b5a-5de9-483a-a29c-d735a0760d09.png)
 
-You should see that KBG syndrome is among the top disease list
 
 ### 8. Summary of the phenotype analysis exercises
 
