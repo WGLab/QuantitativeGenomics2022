@@ -174,7 +174,7 @@ Phen2Gene is a phenotype-based gene prioritization tool from HPO IDs or clinical
 
 We will do the exercise in a directory called `exercise2`. In the terminal, assuming that you are currently in the `exercise1` directory (you can use `pwd` to check this), you can use command `cd ../exercise2` to go into the exercise2 directory.
 
-There are three ways to run Phen2Gene: download and run it locally (need a few GB of space), using API and using Phen2Gene website. Today, we will perform the latter 2 ways of running Phen2Gene. Of course, if you are interested downloading Phen2Gene and run it locally in a different computer server, you can follow instructions here: https://github.com/WGLab/Phen2Gene.
+There are three ways to run Phen2Gene: download and run it locally (need a few GB of space), using API and using Phen2Gene website.
 
 The benefit of running Phen2Gene is if you do not have any idea of a candidate gene for your disease, you can use it in one of three scenarios:
 
