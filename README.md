@@ -188,7 +188,9 @@ Other tools listed below (ClinPhen, AMELIE, etc) require a gene list, and Phen2G
 ### 1. Using Phen2Gene in Terminal.
 
 Go to Terminal, make sure you are in the `exercise2` directory first, and run `python /cloud/project/usr/Phen2Gene/phen2gene.py -f hpo_list.txt`
-where you generate Phen2Gene output file in `out/output_file.associated_gene_list`
+where you generate Phen2Gene output file in `out/output_file.associated_gene_list`.
+
+The `hpo_list.txt` file contains a list of HPO terms for a patient (one per line). If you want to see what is in the file, you can use `cat hpo_list.txt` to see the list of terms. The output file is written to `out/output_file.associated_gene_list` by default.
 
 Use command `more output_file.associated_gene_list` to check the predicted genes.
 
