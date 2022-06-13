@@ -211,6 +211,7 @@ top100<-matrix(array(unlist(result$results)), 5)[1,][1:100]
 write.table(top100, file="phen2gene_top100_genes", quote=F, col.names = F, row.names = F)
 ```
 ![image](https://user-images.githubusercontent.com/5926328/173119713-fd122a2a-8b4d-42d8-9618-af9b06ad5e8e.png)
+
 You can see that the top ranked genes are VPS13B, ARID1B, etc.
 
 ### 2. Running Phen2Gene locally in Terminal.
@@ -226,7 +227,7 @@ Use command `more output_file.associated_gene_list` to check the predicted genes
 
 You can see that the top ranked genes are VPS13B, ARID1B, etc.
 
-### 2. Using the Phen2Gene Website to assess the case with KBG syndrome
+### 3. Using the Phen2Gene Website to assess the case with KBG syndrome
 
 Go to https://phen2gene.wglab.org.  Click on the tab `Patient notes`:
 
