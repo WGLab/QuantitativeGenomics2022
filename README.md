@@ -193,7 +193,7 @@ However, since the `output.txt` file is in JSON format, it is not very intuitive
 ```
 setwd("../exercise2")
 ```
-3. and we can run
+3. Then we can run
 ```
 # install JSON in R
 install.packages("rjson")
@@ -216,8 +216,8 @@ You can see that the top ranked genes are VPS13B, ARID1B, etc.
 
 ### 2. Running Phen2Gene locally in Terminal.
 
-Under the `exercise2` directory, and run `python /cloud/project/usr/Phen2Gene/phen2gene.py -f hpo_list.txt`
-where you generate Phen2Gene output file in `out/output_file.associated_gene_list`.
+Under the `exercise2` directory, we can run `python /cloud/project/usr/Phen2Gene/phen2gene.py -f hpo_list.txt`
+where we generate Phen2Gene output file in `out/output_file.associated_gene_list`.
 
 The `hpo_list.txt` file contains a list of HPO terms for a patient (one per line). If you want to see what is in the file, you can use `cat hpo_list.txt` to see the list of terms. The output file is written to `out/output_file.associated_gene_list` by default.
 
