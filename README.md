@@ -268,12 +268,12 @@ export PATH="$HOME/.local/bin":$PATH
 pip install clinphen
 ```
 
-2. Download package nltk in Python. In terminal, type "python", then type
+2. Download package nltk in Python. In terminal, type `python`, then type
 ```
 import nltk
 nltk.download('omw-1.4')
 ```
-After completing installation, type "exit()" to quit Python.
+After completing installation, type `exit()` to quit Python.
 
 3. Run ClinPhen
 ```
