@@ -107,7 +107,7 @@ In the `exercise1` folder, run `pwd` to obtain the working directory and copy th
 Paste this path to R console or R studio interface to setup the working directory using function `setwd()`. For example:
 
 ```
-> setwd("/cloud/project/genomics_exercise/exercise1")
+setwd("/cloud/project/genomics_exercise/exercise1")
 ```
 
 Check variant distribution across chromesomes:
@@ -221,7 +221,7 @@ where we generate Phen2Gene output file in `out/output_file.associated_gene_list
 
 The `hpo_list.txt` file contains a list of HPO terms for a patient (one per line). If you want to see what is in the file, you can use `cat hpo_list.txt` to see the list of terms. The output file is written to `out/output_file.associated_gene_list` by default.
 
-Use command `more output_file.associated_gene_list` to check the predicted genes.
+Use command `more out/output_file.associated_gene_list` to check the predicted genes.
 
 ![image](https://user-images.githubusercontent.com/11565618/173251477-9995c724-a637-4a81-8582-31ac593ec401.png)
 
