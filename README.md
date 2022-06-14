@@ -225,7 +225,7 @@ Use command `more out/output_file.associated_gene_list` to check the predicted g
 
 ![image](https://user-images.githubusercontent.com/11565618/173251477-9995c724-a637-4a81-8582-31ac593ec401.png)
 
-You can see that the top ranked genes are VPS13B, ARID1B, etc.
+You can see that the top ranked genes are VPS13B, ARID1B, etc. Type `q` to quit the mode.
 
 ### 3. Using the Phen2Gene Website to assess the case with KBG syndrome
 
